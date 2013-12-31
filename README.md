@@ -1,9 +1,11 @@
 # rivets-server
 
-Render [Rivets.js][rivets] templates on the server.
+Render [Rivets.js][rivets] templates on the server. Let Rivets pick up again on the client, if you want.
 
-Be friendly to search engines and browsers without JavaScript!
-
+Advantages:
+- Friendly to search engines and browsers without JavaScript
+- Potential for faster "time-to-content" in mobile experience
+- Use the same templating language on client & server
 
 ## Installation
 
@@ -38,6 +40,10 @@ rivetsServer.render(template, data, options, function (err, html) {
 });
 ```
 
+You may need to provide modified [Rivets adapters](http://www.rivetsjs.com/docs/#adapters).
+For example, if you have custom adapters for pub-sub on the client, but only have JSON models on the server,
+then you might want to alias all adapters to the default `'.'` adapter.
+
 
 ## Details
 
@@ -48,6 +54,7 @@ Uses [jsdom] as a context for Rivets to bind.
 By default, it currently uses [my fork of Rivets][my-rivets], which supports
 restoring `if` and `each` bindings from Rivets on the client-side.
 Vanilla Rivets can't currently persist or restore this information.
+See my pull request at: [https://github.com/mikeric/rivets/pull/253](https://github.com/mikeric/rivets/pull/253)
 
 
 [my-rivets]: https://github.com/AndersDJohnson/rivets/tree/revival
