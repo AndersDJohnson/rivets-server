@@ -22,6 +22,8 @@ rivetsServer.render = (html, data = {}, options = {}, callback) ->
     html: html
     src: [rivetsSrc],
     done: (errs, window) ->
+      if options.configure
+        options.configure(window.rivets)
       root = window.document.documentElement
       window.rivets.bind(root, data, options)
       if options.fullDoc
