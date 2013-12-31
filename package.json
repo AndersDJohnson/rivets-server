@@ -1,0 +1,31 @@
+{
+  "name": "rivets-server",
+  "version": "0.0.1",
+  "description": "Render Rivets.js templates on the server.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Anders Johnson",
+  "homepage": "https://github.com/AndersDJohnson/rivets-server",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AndersDJohnson/rivets-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndersDJohnson/rivets-server/issues"
+  },
+  "dependencies": {
+    "rivets": "git://github.com/AndersDJohnson/rivets#2bbce5611bac27ec",
+    "jsdom": "~0.8.10"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-coffee": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.8.1",
+    "load-grunt-tasks": "~0.2.1",
+    "chai": "~1.8.1"
+  }
+}
