@@ -2,8 +2,10 @@
 
 Render [Rivets.js][rivets] templates on the server.
 
-Be friendly to search engines and browsers without JavaScript!
-
+Advantages:
+- Friendly to search engines and browsers without JavaScript
+- Potential for faster first render on mobile devices
+- Use the same templating language on client & server
 
 ## Installation
 
