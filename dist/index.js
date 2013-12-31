@@ -40,6 +40,9 @@
       src: [rivetsSrc],
       done: function(errs, window) {
         var doctype, rendered, root, _ref;
+        if (options.configure) {
+          options.configure(window.rivets);
+        }
         root = window.document.documentElement;
         window.rivets.bind(root, data, options);
         if (options.fullDoc) {
