@@ -10,12 +10,12 @@ Render [Rivets.js][rivets] templates on the server.
 
 ```javascript
 var rivetsServer = require('rivets-server');
-var template = '&lt;span rv-text="name"&gt;&lt;/span&gt;'
+var template = '<span rv-text="name"></span>'
 var data = {
   name: 'Anders'
 };
 rivetsServer.render(template, data, function (err, html) {
-  // now, html == '&lt;span rv-text="name"&gt;Anders&lt;/span&gt;'
+  // now, html == '<span rv-text="name">Anders</span>'
 });
 ```
 
