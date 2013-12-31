@@ -1,6 +1,6 @@
 # rivets-server
 
-Render [Rivets.js][rivets] templates on the server.
+Render [Rivets.js][rivets] templates on the server. If you want, let Rivets pick up again on the client.
 
 Advantages:
 - Friendly to search engines and browsers without JavaScript
