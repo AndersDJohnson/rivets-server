@@ -40,6 +40,10 @@ rivetsServer.render(template, data, options, function (err, html) {
 });
 ```
 
+You may need to provide modified [Rivets adapters](http://www.rivetsjs.com/docs/#adapters),
+for example, if you only have JSON models on the server, alias all adapters to the default `'.'`.
+
+
 
 ## Details
 
