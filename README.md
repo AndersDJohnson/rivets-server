@@ -40,9 +40,9 @@ rivetsServer.render(template, data, options, function (err, html) {
 });
 ```
 
-You may need to provide modified [Rivets adapters](http://www.rivetsjs.com/docs/#adapters),
-for example, if you only have JSON models on the server, alias all adapters to the default `'.'`.
-
+You may need to provide modified [Rivets adapters](http://www.rivetsjs.com/docs/#adapters).
+For example, if you have custom adapters for pub-sub on the client, but only have JSON models on the server,
+then you might want to alias all adapters to the default `'.'` adapter.
 
 
 ## Details
