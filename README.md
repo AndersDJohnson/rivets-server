@@ -1,6 +1,6 @@
 # rivets-server
 
-Render [Rivets.js][rivets] templates on the server.
+Render [Rivets.js][rivets] templates on the server. Helps provide access to search engines and browsers without JavaScript.
 
 ## Installation
 
