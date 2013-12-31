@@ -7,6 +7,14 @@ Advantages:
 - Potential for faster "time-to-content" in mobile experience
 - Use the same templating language on client & server
 
+By default, it currently uses [my fork of Rivets][my-rivets], which supports
+restoring `if` and `each` bindings from Rivets on the client-side.
+Vanilla Rivets can't currently persist or restore this information.
+See my pull request at: [https://github.com/mikeric/rivets/pull/253](https://github.com/mikeric/rivets/pull/253)
+
+Conforms to the [Consolidate.js][consolidate] API.
+Uses [jsdom] as a context for Rivets to bind.
+
 ## Installation
 
   $ npm install rivets-server
@@ -52,17 +60,6 @@ var options = {
 };
 rivetsServer.render(template, data, options, function (err, html) { /* ... */ };
 ```
-
-## Details
-
-Conforms to the [Consolidate.js][consolidate] API.
-
-Uses [jsdom] as a context for Rivets to bind.
-
-By default, it currently uses [my fork of Rivets][my-rivets], which supports
-restoring `if` and `each` bindings from Rivets on the client-side.
-Vanilla Rivets can't currently persist or restore this information.
-See my pull request at: [https://github.com/mikeric/rivets/pull/253](https://github.com/mikeric/rivets/pull/253)
 
 
 [my-rivets]: https://github.com/AndersDJohnson/rivets/tree/revival
