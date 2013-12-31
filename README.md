@@ -8,9 +8,11 @@ Render [Rivets.js][rivets] templates on the server.
 
 ## Usage
 
+It's easy!
+
 ```javascript
 var rivetsServer = require('rivets-server');
-var template = '<span rv-text="name"></span>'
+var template = '<span rv-text="name"></span>';
 var data = {
   name: 'Anders'
 };
@@ -18,6 +20,21 @@ rivetsServer.render(template, data, function (err, html) {
   // now, html == '<span rv-text="name">Anders</span>'
 });
 ```
+
+If you want to render a full HTML document, pass the `fullDoc` option as follows.
+
+```javascript
+var rivetsServer = require('rivets-server');
+var template = '<!doctype html><html><body>...</body></html>';
+var data = {};
+var options = {
+  fullDoc: true
+};
+rivetsServer.render(template, data, options, function (err, html) {
+  // ...
+});
+```
+
 
 ## Details
 
