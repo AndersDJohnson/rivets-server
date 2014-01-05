@@ -1,3 +1,6 @@
 node_modules
 .idea
 rivets-server.iml
+Gruntfile.js
+test/**/*.js
+src/**/*.js
