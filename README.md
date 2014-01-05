@@ -31,10 +31,10 @@ It's easy!
 ```javascript
 var rivetsServer = require('rivets-server');
 var template = '<span rv-text="name"></span>';
-var data = {
+var locals = {
   name: 'Anders'
 };
-rivetsServer.render(template, data, function (err, html) {
+rivetsServer.render(template, locals, function (err, html) {
   // now, html == '<span rv-text="name">Anders</span>'
 });
 ```
@@ -44,11 +44,12 @@ If you want to render a full HTML document, pass the `fullDoc` option as follows
 ```javascript
 var rivetsServer = require('rivets-server');
 var template = '<!doctype html><html><body>...</body></html>';
-var data = {};
-var options = {
-  fullDoc: true
+var locals = {
+  options: {
+    fullDoc: true
+  }
 };
-rivetsServer.render(template, data, options, function (err, html) { /* ... */ };
+rivetsServer.render(template, locals, function (err, html) { /* ... */ };
 ```
 
 You may need to provide modified [Rivets adapters](http://www.rivetsjs.com/docs/#adapters).
@@ -58,12 +59,14 @@ then you might want to alias all adapters to the default `'.'` adapter.
 ```javascript
 var rivetsServer = require('rivets-server');
 // ...
-var options = {
-  configure: function (rivets) {
-    rivets.adapters[':'] = rivets.adapters['.'];
+var locals = {
+  options: {
+    configure: function (rivets) {
+      rivets.adapters[':'] = rivets.adapters['.'];
+    }
   }
 };
-rivetsServer.render(template, data, options, function (err, html) { /* ... */ };
+rivetsServer.render(template, locals, function (err, html) { /* ... */ };
 ```
 
 
