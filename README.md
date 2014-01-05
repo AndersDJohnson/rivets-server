@@ -11,12 +11,12 @@ Advantages:
 - Use the same templating language on client & server
 
 By default, it currently uses [my fork of Rivets][my-rivets], which supports
-restoring bindings from Rivets on the client-side, such as {text} bindings and empty `if` and `each` bindings.
+restoring bindings from Rivets on the client-side, such as `{text}` bindings and empty `if` and `each` bindings.
 Vanilla Rivets can't currently persist or restore this information.
 See my pull request at: [github.com/mikeric/rivets/pull/253](https://github.com/mikeric/rivets/pull/253)
 
 Conforms to the [Consolidate.js][consolidate] API.
-Uses [jsdom] as a context for Rivets to bind.
+Uses [jsdom] to run Rivets against templates.
 
 ## Installation
 
