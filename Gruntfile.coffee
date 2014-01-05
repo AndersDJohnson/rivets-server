@@ -4,7 +4,7 @@ module.exports = (grunt) ->
 
     mochaTest:
       server:
-        src: ['test/server/**/*']
+        src: ['test/server/**/*.coffee']
 
     coffee:
       options:
@@ -23,13 +23,13 @@ module.exports = (grunt) ->
     watch:
       test:
         files: [
-          'src/**/*'
-          'test/**/*'
+          'src/**/*.coffee'
+          'test/**/*.coffee'
         ]
         tasks: ['build', 'test']
       build:
         files: [
-          'src/**/*'
+          'src/**/*.coffee'
         ]
         tasks: ['build']
 
