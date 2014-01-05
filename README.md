@@ -4,6 +4,7 @@
 [![NPM dependencies](https://david-dm.org/AndersDJohnson/rivets-server.png)](https://david-dm.org/AndersDJohnson/rivets-server)
 [![Build Status](https://travis-ci.org/AndersDJohnson/rivets-server.png)](https://travis-ci.org/AndersDJohnson/rivets-server)
 
+
 Render [Rivets.js][rivets] templates on the server. Let Rivets pick up again on the client, if you want.
 
 Advantages:
