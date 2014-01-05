@@ -4,25 +4,25 @@ assert = require('chai').assert
 describe 'rivets-server', ->
 
   describe 'render', ->
-    data = null
+    locals = null
 
     beforeEach ->
-      data =
+      locals =
         name: 'Joe'
 
     it 'fragment', (done) ->
-      rivetsServer.render '<span rv-text="name"></span>', data, (err, html) ->
+      rivetsServer.render '<span rv-text="name"></span>', locals, (err, html) ->
         assert.equal(html, '<span rv-text="name">Joe</span>')
         done()
 
     it 'full html', (done) ->
+      locals.options = {
+        fullDoc: true
+      }
       rivetsServer.render '''
         <html><body rv-text="name"></body></html>
       ''',
-      data,
-      {
-        fullDoc: true
-      },
+      locals,
       (err, html) ->
         assert.equal(html, '''
           <html><body rv-text="name">Joe</body></html>
@@ -30,14 +30,14 @@ describe 'rivets-server', ->
         done()
 
     it 'with doctype', (done) ->
+      locals.options = {
+        fullDoc: true
+      }
       rivetsServer.render '''
         <!DOCTYPE html>
         <html><body rv-text="name"></body></html>
       ''',
-      data,
-      {
-        fullDoc: true
-      },
+      locals,
       (err, html) ->
         assert.equal(html, '''
           <!DOCTYPE html><html><body rv-text="name">Joe</body></html>
@@ -46,24 +46,24 @@ describe 'rivets-server', ->
 
 
   describe 'revive', ->
-    data = null
+    locals = null
 
     beforeEach ->
-      data =
+      locals =
         happy: true
 
     describe 'if', ->
 
       it 'true', (done) ->
-        rivetsServer.render '<span rv-if="happy">Yay!</span>', data, (err, html) ->
+        rivetsServer.render '<span rv-if="happy">Yay!</span>', locals, (err, html) ->
           expected = '<!-- rivets: if @happy@ @&lt;span rv-if="happy"&gt;Yay!&lt;/span&gt;@ -->' +
             '<span>Yay!</span>'
           assert.equal(html, expected)
           done()
 
       it 'false', (done) ->
-        data.happy = false
-        rivetsServer.render '<span rv-if="happy">Yay!</span>', data, (err, html) ->
+        locals.happy = false
+        rivetsServer.render '<span rv-if="happy">Yay!</span>', locals, (err, html) ->
           expected = '<!-- rivets: if @happy@ @&lt;span rv-if="happy"&gt;Yay!&lt;/span&gt;@ -->'
           assert.equal(html, expected)
           done()

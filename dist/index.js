@@ -12,23 +12,15 @@
 
   module.exports = rivetsServer = {};
 
-  rivetsServer.render = function(html, data, options, callback) {
-    var defaults, key;
-    if (data == null) {
-      data = {};
-    }
-    if (options == null) {
-      options = {};
-    }
-    if (callback == null) {
-      if (callback == null) {
-        callback = options;
-      }
-      options = {};
+  rivetsServer.render = function(html, locals, callback) {
+    var defaults, key, options;
+    if (locals == null) {
+      locals = {};
     }
     defaults = {
       fullDoc: false
     };
+    options = locals.options || {};
     for (key in defaults) {
       if (!__hasProp.call(defaults, key)) continue;
       if (options[key] == null) {
@@ -44,7 +36,7 @@
           options.configure(window.rivets);
         }
         root = window.document.documentElement;
-        window.rivets.bind(root, data, options);
+        window.rivets.bind(root, locals, options);
         if (options.fullDoc) {
           doctype = ((_ref = window.document.doctype) != null ? _ref.toString() : void 0) || '';
           rendered = doctype + root.outerHTML;
