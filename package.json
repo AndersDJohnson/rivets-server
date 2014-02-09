@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "rivets": "git://github.com/AndersDJohnson/rivets#8056f2134a3e22",
-    "jsdom": "~0.8.10"
+    "jsdom": "~0.10.1"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
