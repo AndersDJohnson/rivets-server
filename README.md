@@ -22,7 +22,9 @@ Uses [jsdom] to run Rivets against templates.
 
 ## Installation
 
+```sh
   $ npm install rivets-server
+```
 
 ## Usage
 
