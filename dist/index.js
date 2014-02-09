@@ -50,6 +50,4 @@
 
 }).call(this);
 
-/*
 //# sourceMappingURL=../dist/index.js.map
-*/
