@@ -73,7 +73,7 @@ rivetsServer.render(template, locals, function (err, html) { /* ... */ };
 
 
 [my-rivets]: https://github.com/AndersDJohnson/rivets/tree/revival
-[rivets]: http://www.rivetsjs.com/docs/ "Rivets.js"
+[rivets]: http://rivetsjs.com/
 [jsdom]: https://github.com/tmpvar/jsdom
 [consolidate]: https://github.com/visionmedia/consolidate.js/
 
