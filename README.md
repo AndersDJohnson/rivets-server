@@ -7,6 +7,8 @@
 
 Render [Rivets.js][rivets] templates on the server. Let Rivets pick up again on the client, if you want.
 
+An experiment in [isomorphic JavaScript](https://blog.nodejitsu.com/scaling-isomorphic-javascript-code/).
+
 Advantages:
 - Friendly to search engines and browsers without JavaScript
 - Potential for faster "time-to-content" in mobile experience
