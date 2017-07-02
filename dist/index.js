@@ -1,10 +1,14 @@
 (function() {
-  var fs, jsdom, rivetsPath, rivetsServer, rivetsSrc,
-    __hasProp = {}.hasOwnProperty;
+  var fs, jsdom, jsdomApi, rivetsPath, rivetsServer, rivetsSrc, serializeDocument,
+    hasProp = {}.hasOwnProperty;
 
   fs = require('fs');
 
-  jsdom = require('jsdom').jsdom;
+  jsdomApi = require('jsdom/lib/old-api');
+
+  jsdom = jsdomApi.jsdom;
+
+  serializeDocument = jsdomApi.serializeDocument;
 
   rivetsPath = require.resolve('rivets');
 
@@ -22,7 +26,7 @@
     };
     options = locals.options || {};
     for (key in defaults) {
-      if (!__hasProp.call(defaults, key)) continue;
+      if (!hasProp.call(defaults, key)) continue;
       if (options[key] == null) {
         options[key] = defaults[key];
       }
@@ -31,15 +35,14 @@
       html: html,
       src: [rivetsSrc],
       done: function(errs, window) {
-        var doctype, rendered, root, _ref;
+        var rendered, root;
         if (options.configure) {
           options.configure(window.rivets);
         }
         root = window.document.documentElement;
         window.rivets.bind(root, locals, options);
         if (options.fullDoc) {
-          doctype = ((_ref = window.document.doctype) != null ? _ref.toString() : void 0) || '';
-          rendered = doctype + root.outerHTML;
+          rendered = serializeDocument(window.document);
         } else {
           rendered = window.document.body.innerHTML;
         }
@@ -50,4 +53,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=../dist/index.js.map
+//# sourceMappingURL=index.js.map
