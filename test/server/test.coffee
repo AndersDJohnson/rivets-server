@@ -25,7 +25,7 @@ describe 'rivets-server', ->
       locals,
       (err, html) ->
         assert.equal(html, '''
-          <html><body rv-text="name">Joe</body></html>
+          <html><head></head><body rv-text="name">Joe</body></html>
         ''')
         done()
 
@@ -35,12 +35,12 @@ describe 'rivets-server', ->
       }
       rivetsServer.render '''
         <!DOCTYPE html>
-        <html><body rv-text="name"></body></html>
+        <html><head></head><body rv-text="name"></body></html>
       ''',
       locals,
       (err, html) ->
         assert.equal(html, '''
-          <!DOCTYPE html><html><body rv-text="name">Joe</body></html>
+          <!DOCTYPE html><html><head></head><body rv-text="name">Joe</body></html>
         ''')
         done()
 

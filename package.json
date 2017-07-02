@@ -18,14 +18,15 @@
   },
   "dependencies": {
     "rivets": "git://github.com/AndersDJohnson/rivets#8056f2134a3e22",
-    "jsdom": "~0.10.1"
+    "jsdom": "~11.0.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-coffee": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-mocha-test": "~0.8.1",
-    "load-grunt-tasks": "~0.2.1",
-    "chai": "~1.8.1"
+    "chai": "~4.0.2",
+    "grunt": "~1.0.1",
+    "grunt-contrib-coffee": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-mocha-test": "~0.13.2",
+    "load-grunt-tasks": "~3.5.2",
+    "mocha": "^3.4.2"
   }
 }

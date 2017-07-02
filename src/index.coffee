@@ -1,5 +1,7 @@
 fs = require 'fs'
-jsdom = require('jsdom').jsdom
+jsdomApi = require('jsdom/lib/old-api')
+jsdom = jsdomApi.jsdom
+serializeDocument = jsdomApi.serializeDocument
 
 rivetsPath = require.resolve('rivets')
 rivetsSrc = fs.readFileSync(rivetsPath)
@@ -25,8 +27,7 @@ rivetsServer.render = (html, locals = {}, callback) ->
       root = window.document.documentElement
       window.rivets.bind(root, locals, options)
       if options.fullDoc
-        doctype = window.document.doctype?.toString() || ''
-        rendered = doctype + root.outerHTML
+        rendered = serializeDocument(window.document)
       else
         rendered = window.document.body.innerHTML
       callback(errs, rendered)
