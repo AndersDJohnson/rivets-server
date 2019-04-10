@@ -1,12 +1,12 @@
 {
   "name": "rivets-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Render Rivets.js templates on the server.",
   "main": "dist/index.js",
   "scripts": {
     "test": "grunt test"
   },
-  "author": "Anders Johnson",
+  "author": "Anders D. Johnson (https://andersdjohnson.com)",
   "homepage": "https://github.com/AndersDJohnson/rivets-server",
   "license": "MIT",
   "repository": {
